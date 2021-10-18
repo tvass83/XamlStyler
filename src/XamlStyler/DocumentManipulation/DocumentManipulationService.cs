@@ -84,7 +84,7 @@ namespace Xavalon.XamlStyler.DocumentManipulation
             reorderService.ParentNodeNames.Add(new NameSelector("MultiTrigger", null));
             reorderService.ParentNodeNames.Add(new NameSelector("Style", null));
             reorderService.ParentNodeNames.Add(new NameSelector("Trigger", null));
-            reorderService.ChildNodeNames.Add(new NameSelector("Setter", "http://schemas.microsoft.com/winfx/2006/xaml/presentation"));
+            reorderService.ChildNodeNames.Add(new NameSelector("Setter", null));
 
             switch (this.options.ReorderSetters)
             {
