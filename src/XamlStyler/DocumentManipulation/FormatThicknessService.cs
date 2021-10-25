@@ -9,8 +9,7 @@ namespace Xavalon.XamlStyler.DocumentManipulation
 {
     public class FormatThicknessService : IProcessElementService
     {
-        private const string XamlNamespace = "http://schemas.microsoft.com/winfx/2006/xaml/presentation";
-        private static readonly XName SetterName = XName.Get("Setter", XamlNamespace);
+        private static readonly XName SetterName = XName.Get("Setter");
 
         public FormatThicknessService(ThicknessStyle thicknessStyle, string thicknessAttributes)
         {
@@ -38,7 +37,8 @@ namespace Xavalon.XamlStyler.DocumentManipulation
             }
 
             // Setter? Format "Value" attribute if "Property" attribute matches ThicknessAttributeNames
-            if (element.Name == SetterName)
+            // Ignore the xml ns when comparing
+            if (element.Name.LocalName == SetterName.LocalName)
             {
                 var propertyAttribute = element.Attributes("Property").FirstOrDefault();
                 if ((propertyAttribute != null) && !propertyAttribute.Value.Contains(":")
