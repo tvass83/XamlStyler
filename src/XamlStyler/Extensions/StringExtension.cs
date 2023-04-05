@@ -15,7 +15,7 @@ namespace Xavalon.XamlStyler.Extensions
         {
             ["&"] = "&amp;",
             ["<"] = "&lt;",
-            [">"] = "&gt;",
+            //[">"] = "&gt;",
             ["\""] = "&quot;"
         };
 
